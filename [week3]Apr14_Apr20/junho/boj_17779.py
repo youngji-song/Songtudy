@@ -15,12 +15,13 @@ def cal(si,sj,d1,d2):
 
     for i in range(N):
         for j in range(N):
-            if v[i][j]==1: continue
-            if i<si+d1 and j<=sj: alst[0]+=arr[i][j]
-            if i<=si+d2 and sj<j: alst[1]+=arr[i][j]
-            if si+d1<=i and j<sj-d1+d2: alst[2]+=arr[i][j]
-            if si+d2<i and sj-d1+d2<=j: alst[3]+=arr[i][j]
-    alst[4]=tot-sum(alst)
+            if v[i][j]==1: alst[4] += arr[i][j]
+            else:
+                if i<si+d1 and j<=sj: alst[0]+=arr[i][j]
+                if i<=si+d2 and sj<j: alst[1]+=arr[i][j]
+                if si+d1<=i and j<sj-d1+d2: alst[2]+=arr[i][j]
+                if si+d2<i and sj-d1+d2<=j: alst[3]+=arr[i][j]
+    # alst[4]=tot-sum(alst)
     # print(alst)
     return max(alst)-min(alst)
 
