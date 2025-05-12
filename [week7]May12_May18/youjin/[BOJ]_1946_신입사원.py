@@ -8,6 +8,8 @@ t = int(input())
 for tc in range(1,t+1):
     n = int(input())
     people = []
+    cnt = 0
+
 
     for _ in range(n):
         s_test, m_test = map(int, input().split())
